@@ -1,0 +1,2 @@
+# src_genai_Script_to_use_local_LLM_with_llama.cpp_and_PowerShell
+ローカルLLMをllama.cppとPowerShellで利用するスクリプト
