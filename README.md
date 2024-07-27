@@ -219,7 +219,7 @@ pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue"
 
 <br/><br/>
 ### Chat使用例２
-Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
+Chat.ps1をPowershellで使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
 
 #### on Windows powershell
 ```bash
@@ -229,6 +229,16 @@ powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Con
 previousPromptPath . . . 過去の「outputPath」に出力されたファイルより、「prompt.txt」を指定<br/>
 previousContentPath . . . 過去の「outputPath」に出力されたファイルより、「content.txt」を指定<br/>
 （例はサンプルのためスクリプトと同じディレクトリに配置）<br/>
+<br/><br/>
+
+<br/><br/>
+### Task使用例１
+Task.ps1をPowershellで使用する例
+
+#### on Windows powershell
+```bash
+powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./Task.ps1 -configPath './configure.json' -systemPromptPath './systemPrompt.conf' -userPromptPath './userPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
+```
 <br/><br/>
 
 
