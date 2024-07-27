@@ -16,8 +16,8 @@
     - [2. Chat.ps1 の使い方](#2-chatps1-の使い方)
     - [3.  Task.ps1 の使い方](#3--taskps1-の使い方)
 - [補足](#補足)
-- [Chat.ps1をPowershell(pwsh)で使用する例](#Chat.ps1をPowershell(pwsh)で使用する例)
-- [Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例](#Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例)
+- [Chat使用例１](#Chat使用例１)
+- [Chat使用例２](#Chat使用例２)
 
 <br/><br/>
 
@@ -192,7 +192,8 @@ sequenceDiagram
 
 <br/><br/>
 
-### Chat.ps1をPowershell(pwsh)で使用する例
+### Chat使用例１
+Chat.ps1をPowershell(pwsh)で使用する例
 
 #### on Windows powershell
 
@@ -216,7 +217,8 @@ pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue"
 
 
 
-### Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
+### Chat使用例２
+Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
 
 #### on Windows powershell
 ```bash
