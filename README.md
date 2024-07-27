@@ -22,8 +22,10 @@
 
 ### 概要
 
-このスクリプト集は、PowerShellを介して対話とタスク実行を可能にします。設定ファイル`configure.json`で動作パラメータ、APIエンドポイント、プロンプトフォーマット等を定義します。
-現時点（2024/07）のバージョンだと、llama.cppをLLMアプリケーションとして使用し、Phi-3 mini をローカルLLMとして使用する設定となっています。
+このスクリプト集は、PowerShellを介して対話とタスク実行を可能にします。設定ファイル`configure.json`で動作パラメータ、APIエンドポイント、プロンプトフォーマット等を定義します。<br/>
+<br/>
+現時点（2024/07）のバージョンだと、llama.cppをLLMアプリケーションとして使用し、Phi-3 mini をローカルLLMとして使用する設定となっています。<br/>
+
 
 ```mermaid
 graph LR
@@ -80,6 +82,7 @@ graph LR
 graph LR
     A[Chat.ps1] --> B(ChatFunction.ps1)
     B --> C(TaskFunction.ps1)
+    Z[Task.ps1] --> C
     B --> D(ProcessOutputPathFunction.ps1)
     B --> E(WriteParametersFunction.ps1)
     C --> F(ConversationFunction.ps1)
@@ -196,14 +199,14 @@ powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Con
 ```
 
 <br/><br/>
-#### on Windows pwsh
+#### on Windows pwsh ( Microsoft公式サイトより「Windows への PowerShell のインストール」参照 )
 
 ```bash
 pwsh -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./Chat.ps1 -configPath './configure.json' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
 ```
 
 <br/><br/>
-#### on Linux pwsh
+#### on Linux ( Ubuntu )  pwsh ( Microsoft公式サイトより「Linux に PowerShell をインストールする」参照 )
 
 ```bash
 pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue";$ErrorActionPreference="Stop";' ./Chat.ps1 -configPath './configure.json' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
@@ -214,14 +217,15 @@ pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue"
 ### Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
 
 #### on Windows powershell
-previousPromptPath . . . 過去の「outputPath」に出力されたファイルより、「prompt.txt」を指定
-previousContentPath . . . 過去の「outputPath」に出力されたファイルより、「content.txt」を指定
-（下記の例はサンプルのためスクリプトと同じディレクトリに配置）
-<br/><br/>
-
 ```bash
 powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./Chat.ps1 -configPath './configure.json' -previousPromptPath './prompt.txt' -previousContentPath './content.txt' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
 ```
+<br/><br/>
+previousPromptPath . . . 過去の「outputPath」に出力されたファイルより、「prompt.txt」を指定<br/>
+previousContentPath . . . 過去の「outputPath」に出力されたファイルより、「content.txt」を指定<br/>
+（下記の例はサンプルのためスクリプトと同じディレクトリに配置）<br/>
+<br/><br/>
+
 
 
 
