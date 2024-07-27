@@ -25,8 +25,8 @@
 このスクリプト集は、PowerShellを介して対話とタスク実行を可能にします。設定ファイル`configure.json`で動作パラメータ、APIエンドポイント、プロンプトフォーマット等を定義します。<br/>
 <br/>
 現時点（2024/07）のバージョンだと、llama.cppをLLMアプリケーションとして使用し、Phi-3 mini をローカルLLMとして使用する設定となっています。<br/>
-
-
+環境設定は（[github.com/SparklingDetergent/doc_genai_Run_local_LLM_with_Llama.cpp_and_Phi-3_mini](https://github.com/SparklingDetergent/doc_genai_Run_local_LLM_with_Llama.cpp_and_Phi-3_mini/blob/main/README.md) ）をご参照ください。<br/>
+<br/>
 ```mermaid
 graph LR
     A[PowerShellスクリプト集] -- llama.cpp を利用 --> B[ローカルLLM]
