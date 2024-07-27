@@ -127,7 +127,7 @@ graph LR
 2. **設定ファイル**: `configure.json`を適切に設定
 3. **実行**: PowerShellで`Chat.ps1`を実行、必要に応じてパラメータを指定
 4. **対話**: プロンプトを入力し、LLMからの応答を確認
-5. **会話履歴からの継続的な対話**: 一度途切れた会話の途中から、会話履歴をもとに会話を継続
+5. **会話履歴からの継続的な対話**: 会話履歴をもとに会話を再開させる機能
 
 ```mermaid
 sequenceDiagram
@@ -220,7 +220,7 @@ pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue"
 
 <br/><br/>
 ### Chat使用例２
-Chat.ps1をPowershellで使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
+Chat.ps1をPowershellで使用。会話履歴をもとに会話を再開させる例。
 
 #### on Windows powershell
 ```bash
