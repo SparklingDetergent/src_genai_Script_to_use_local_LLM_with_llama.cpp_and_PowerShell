@@ -217,6 +217,7 @@ pwsh -NoProfile -ExecutionPolicy Bypass  -Command '$VerbosePreference="Continue"
 
 
 
+<br/><br/>
 ### Chat使用例２
 Chat.ps1をPowershell(pwsh)で使用。一度途切れた会話の途中から、会話履歴をもとに会話を継続させる例。
 
