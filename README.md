@@ -228,7 +228,7 @@ powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Con
 <br/><br/>
 previousPromptPath . . . 過去の「outputPath」に出力されたファイルより、「prompt.txt」を指定<br/>
 previousContentPath . . . 過去の「outputPath」に出力されたファイルより、「content.txt」を指定<br/>
-（下記の例はサンプルのためスクリプトと同じディレクトリに配置）<br/>
+（例はサンプルのためスクリプトと同じディレクトリに配置）<br/>
 <br/><br/>
 
 
