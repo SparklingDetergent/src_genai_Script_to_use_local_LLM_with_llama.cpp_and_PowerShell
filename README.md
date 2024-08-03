@@ -18,6 +18,7 @@
 - [補足](#補足)
 - [Chat使用例１](#Chat使用例１)
 - [Chat使用例２](#Chat使用例２)
+- [ChatForWindows使用例１](#ChatForWindows使用例１)
 - [Task使用例１](#Task使用例１)
 
 <br/><br/>
@@ -45,15 +46,18 @@ graph LR
 #### 1. ローカルLLMとの対話
 
 - **Chat.ps1**: 会話履歴を保持しながら、継続的な対話セッションを提供します。
+- **ChatForWindows.ps1**: Windows向けGUI。
 - **Interactive.ps1**: 簡単な質問やタスク実行など、対話的なLLM利用を可能にします。
 - **Conversation.ps1**: システムプロンプト、ユーザー入力、アシスタントプロンプトを含む1回の会話ターンを処理します。
 
 ```mermaid
 graph LR
     A[ユーザー] -- 対話 --> B(Chat.ps1)
-    A -- 対話 --> C(Interactive.ps1)
+    A -- 対話 --> F(Interactive.ps1)
+    A[ユーザー] -- 対話 --> C(ChatForWindows.ps1)
     B --> D{Conversation.ps1}
     C --> D
+    F --> D
     D -- LLMとの対話 --> E[ローカルLLM]
 ```
 
@@ -128,6 +132,8 @@ graph LR
 3. **実行**: PowerShellで`Chat.ps1`を実行、必要に応じてパラメータを指定
 4. **対話**: プロンプトを入力し、LLMからの応答を確認
 5. **会話履歴からの継続的な対話**: 会話履歴をもとに会話を再開させる機能
+6. 「ChatForWindows.ps1」も同様の利用が可能。
+
 
 ```mermaid
 sequenceDiagram
@@ -234,8 +240,20 @@ previousContentPath . . . 過去の「outputPath」に出力されたファイ�
 <br/><br/>
 
 <br/><br/>
+
+### ChatForWindows使用例１
+ChatForWindows.ps1をPowershellで使用する例(pwshでも動作します)
+
+#### on Windows powershell
+
+```bash
+powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./ChatForWindows.ps1 -configPath './configure.json' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
+```
+
+
+<br/><br/>
 ### Task使用例１
-Task.ps1をPowershellで使用する例
+Task.ps1をPowershellで使用する例(pwshでも動作します)
 
 #### on Windows powershell
 ```bash
