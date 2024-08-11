@@ -231,11 +231,12 @@ Chat.ps1をPowershellで使用。会話履歴をもとに会話を再開させ�
 
 #### on Windows powershell
 ```bash
-powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./Chat.ps1 -configPath './configure.json' -previousPromptPath './prompt.txt' -previousContentPath './content.txt' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
+powershell -NoProfile -ExecutionPolicy Bypass  -Command "$VerbosePreference='Continue';$ErrorActionPreference='Stop';" ./Chat.ps1 -configPath './configure.json' -previousPromptPath './prompt.txt' -previousContentPath './content.txt' -previousStoppingWordPath './stopping_word.txt' -systemPromptPath './systemPrompt.conf' -assistantPromptPath './assistantPrompt.conf' -outputPath './output'
 ```
 <br/><br/>
 previousPromptPath . . . 過去の「outputPath」に出力されたファイルより、「prompt.txt」を指定<br/>
 previousContentPath . . . 過去の「outputPath」に出力されたファイルより、「content.txt」を指定<br/>
+previousStoppingWordPath . . . 過去の「outputPath」に出力されたファイルより、「stopping_word.txt」を指定<br/>
 （例はサンプルのためスクリプトと同じディレクトリに配置）<br/>
 <br/><br/>
 
