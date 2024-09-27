@@ -1,0 +1,51 @@
+
+①ggufファイルは llama.cpp の release 資材をダウンロードし展開したのち、
+ build/bin フォルダへ配置すること。
+ 
+ hugging face のQwen公式ページにおいてQwen 2.5 のggufを取得する場合、
+ 分割して配布されていることから、以下のコマンドによりマージする必要がある。
+ 以下Windows 等でマージする例を参考にマージし、マージ後のggufを各環境へ配置すること。
+ 
+ （例）
+
+・ダウンロード元
+https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF
+
+↓
+
+https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q5_0-00001-of-00002.gguf?download=true
+
+&
+
+https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q5_0-00002-of-00002.gguf?download=true
+
+
+・Windowsへの配置先
+C:\work\models\llama-b3808-bin-win-openblas-x64
+
+・マージコマンド
+cd C:\work\models\llama-b3808-bin-win-openblas-x64
+.\llama-gguf-split.exe --merge qwen2.5-coder-7b-instruct-q5_0-00001-of-00002.gguf qwen2.5-coder-7b-instruct-q5_0.gguf
+
+
+
+②サーバ起動スクリプトを mac 環境へ配置した直後、以下のコマンドにより有効化すること
+
+```bash
+chmod +x ./llama-server_Qwen_2.5_Coder_7B_Q5.sh
+```
+
+
+③サーバ起動スクリプトを実行すること
+
+```bash
+./llama-server_Qwen_2.5_Coder_7B_Q5.sh
+```
+
+
+④以降、各種クライアント環境より利用すること
+
+・curl
+・Web UI
+・Client Script
+
